@@ -79,10 +79,4 @@ The ERD is designed using Lucidchart and shows the relationships between:
 
 ---
 
-## 📦 Getting Started
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/<your-username>/task-management-api.git
-cd task-management-api
