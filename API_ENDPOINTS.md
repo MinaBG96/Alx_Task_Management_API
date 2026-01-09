@@ -1,12 +1,54 @@
 # Main API Endpoints
 
 ## Auth
-
-- **POST** /api/auth/login – Obtain JWT access/refresh tokens
+### 1. *register user*
 - **POST** /api/auth/register – Register new user
+    * *Request Body*
+        ```bash
+        json{
+            "username": "mina1",
+            "email": "mina@test.com",
+            "password": "1234"
+            }
+        ```
+    * *response*
+        ```bash
+        json{
+            "message": "User registered successfully"
+            }
+        ```
+### 2. *login user*
+- **POST** /api/auth/login – Obtain JWT access/refresh tokens
+    * *Request Body*
+        ```bash
+        json{
+            "username": "mina1",
+            "email": "mina@test.com",
+            "password": "1234"
+        }
+        ```
+    * *response*
+        ```bash
+        json{
+            "refresh": "<access-token>",
+            "access": "<access-token>"
+        }
+        ```
 
 ## Users
+### 1. *Get current user info*
 - **GET** /api/users/me – Get current user info
+    * *Headers* :
+        1. add key **Authorization**
+        2. add value: **Bearer access-token**
+    * *response*
+        ```bash
+        json{
+            "id": 2,
+            "username": "mina1",
+            "email": "mina@test.com"
+            }
+        ```
 - **PUT** /api/users/me – Update profile
 - **DELETE** /api/users/me – Delete account (optional)
 
