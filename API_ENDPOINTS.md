@@ -95,8 +95,52 @@
         ```
 
 ## Projects
-- **GET**/api/projects – List all user projects
+### 1. *Create project*
 - **POST** /api/projects – Create project
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <*access-token*> of specific user**
+    * *Request Body*
+        ```bash
+        json{
+            "name": "My First Project",
+            "description": "This is my first project"
+        }
+        ```
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "name": "My First Project",
+            "description": "This is my first project",
+            "created_at": "2026-01-11T21:36:15.003205Z",
+            "updated_at": "2026-01-11T21:36:15.003223Z"
+        }
+        ```
+### 2. *List all user projects*
+- **GET**/api/projects – List all user projects
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <*access-token*> of specific user**
+    * *Response*
+        ```bash
+        json[
+            {
+                "id": 1,
+                "name": "My First Project",
+                "description": "This is my first project",
+                "created_at": "2026-01-11T21:36:15.003205Z",
+                "updated_at": "2026-01-11T21:36:15.003223Z"
+            },
+            {
+                "id": 2,
+                "name": "My second Project",
+                "description": "This is my second project",
+                "created_at": "2026-01-11T21:46:17.813960Z",
+                "updated_at": "2026-01-11T21:46:17.813976Z"
+            }
+        ]
+        ```
 - **GET** /api/projects/{id} – Retrieve single project
 - **PUT** /api/projects/{id} – Update project
 - **DELETE** /api/projects/{id} – Delete project
