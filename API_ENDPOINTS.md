@@ -41,16 +41,50 @@
     * *Headers* :
         1. add key **Authorization**
         2. add value: **Bearer access-token**
-    * *response*
+    * *Request Body*
         ```bash
         json{
-            "id": 2,
-            "username": "mina1",
-            "email": "mina@test.com"
+            "username": "mina_updated",
+            "email": "mina_update@test.com"
             }
         ```
+### 2. *Update profile*
 - **PUT** /api/users/me – Update profile
-- **DELETE** /api/users/me – Delete account (optional)
+    * *Headers* :
+        1. add key **Authorization**
+        2. add value: **Bearer access-token**
+    * *Request Body*
+        ```bash
+        json{
+            "username": "mina_updated",
+            "email": "mina_update@test.com"
+            }
+        ```
+    * *Response*
+        ```bash
+        json{
+            "username": "mina_updated",
+            "email": "mina_update@test.com"
+            }
+        ```
+### 3. *Delete account*
+- **DELETE** /api/users/me/ – Delete account (optional)
+    * *Headers* :
+        1. add key **Authorization**
+        2. add value: **Bearer access-token**
+    * *Request Body*
+        ```bash
+        json{
+            "username": "mina3",
+            "email": "mina2@test.com"
+            }
+        ```
+    * *Response*
+        ```bash
+        json{
+            "message": "User account deleted successfully"
+            }
+        ```
 
 ## Projects
 - **GET**/api/projects – List all user projects

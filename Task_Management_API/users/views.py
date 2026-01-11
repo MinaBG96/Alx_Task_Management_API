@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import RegisterSerializer
 from rest_framework.permissions import IsAuthenticated
-
+from users.serializers import serializers , UserUpdateSerializer
 class RegisterAPIView(APIView):
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -16,6 +16,8 @@ class RegisterAPIView(APIView):
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+
+
 class UserMeAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -26,3 +28,27 @@ class UserMeAPIView(APIView):
             "username": user.username,
             "email": user.email
         })
+
+    def put(self, request):
+        user = request.user
+        serializer = UserUpdateSerializer(
+            user,
+            data=request.data,
+            partial=True
+        )
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    
+    def delete(self, request):
+        user = request.user
+        user.delete()
+        return Response(
+            {"message": "User account deleted successfully"},
+            status=status.HTTP_204_NO_CONTENT
+        )
