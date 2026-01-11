@@ -9,13 +9,13 @@
             "username": "mina1",
             "email": "mina@test.com",
             "password": "1234"
-            }
+        }
         ```
     * *response*
         ```bash
         json{
             "message": "User registered successfully"
-            }
+        }
         ```
 ### 2. *login user*
 - **POST** /api/auth/login – Obtain JWT access/refresh tokens
@@ -44,9 +44,17 @@
     * *Request Body*
         ```bash
         json{
-            "username": "mina_updated",
-            "email": "mina_update@test.com"
-            }
+            "username": "mina",
+            "email": "mina@test.com"
+        }
+        ```
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "username": "mina",
+            "email": "mina@test.com"
+        }
         ```
 ### 2. *Update profile*
 - **PUT** /api/users/me – Update profile
@@ -58,14 +66,14 @@
         json{
             "username": "mina_updated",
             "email": "mina_update@test.com"
-            }
+        }
         ```
     * *Response*
         ```bash
         json{
             "username": "mina_updated",
             "email": "mina_update@test.com"
-            }
+        }
         ```
 ### 3. *Delete account*
 - **DELETE** /api/users/me/ – Delete account (optional)
@@ -77,13 +85,13 @@
         json{
             "username": "mina3",
             "email": "mina2@test.com"
-            }
+        }
         ```
     * *Response*
         ```bash
         json{
             "message": "User account deleted successfully"
-            }
+        }
         ```
 
 ## Projects
