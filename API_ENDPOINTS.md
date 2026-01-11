@@ -141,10 +141,54 @@
             }
         ]
         ```
+### 3. *Retrieve single project*
 - **GET** /api/projects/{id} – Retrieve single project
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <*access-token*> of specific user**
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "name": "My First Project",
+            "description": "This is my first project",
+            "created_at": "2026-01-11T21:36:15.003205Z",
+            "updated_at": "2026-01-11T21:36:15.003223Z"
+        }
+        ```
+### 4. *Update project*
 - **PUT** /api/projects/{id} – Update project
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <*access-token*> of specific user**
+    * *Request Body*
+        ```bash
+        json{
+            "name":"My First Project Updated",
+            "description": "This is my first project Updated"
+        }
+        ```
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "name": "My First Project Updated",
+            "description": "This is my first project Updated",
+            "created_at": "2026-01-11T21:36:15.003205Z",
+            "updated_at": "2026-01-11T22:00:19.857215Z"
+        }
+        ```
+### 5. *Delete project*
 - **DELETE** /api/projects/{id} – Delete project
-
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <*access-token*> of specific user**
+    * *Response*
+        ```bash
+        json{
+            "message": "Project deleted successfully"
+        }
+        ```
 ## Tasks
 - **GET**/api/tasks – List all tasks for user
 - **GET**/api/projects/{projectId}/tasks – List tasks under a project
