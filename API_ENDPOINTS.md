@@ -373,10 +373,10 @@
 
 ## Labels
 
-- **GET** /api/labels – List labels
 - **POST** /api/labels – Create label
-- **GET** /api/labels/{id} – Retrieve label
+- **GET** /api/labels – List labels
 - **PUT** /api/labels/{id} – Update label
+- **GET** /api/labels/{id} – Retrieve label
 - **DELETE** /api/labels/{id} – Delete label
 - **POST** /api/tasks/{taskId}/labels/{labelId} – Attach label to task
 - **DELETE** /api/tasks/{taskId}/labels/{labelId} – Remove label from task
