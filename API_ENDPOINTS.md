@@ -82,13 +82,6 @@
   - _Headers_ :
     1. add key **Authorization**
     2. add value: **Bearer access-token**
-  - _Request Body_
-    ```json
-    {
-        "username": "mina3",
-        "email": "mina2@test.com"
-    }
-    ```
   - _Response_
     ```json
     {
@@ -237,7 +230,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response* :
         ```json
-        {
+        [
                 {
                     "id": 1,
                     "title": "First Task",
@@ -268,7 +261,7 @@
                     "created_at": "2026-01-11T22:44:19.920548Z",
                     "updated_at": "2026-01-11T22:44:19.920562Z"
                 }
-        }
+        ]
 ### 3. *Retrieve single task*
 - **GET**/api/tasks/{id} – Retrieve single task
     * *Headers* :
@@ -293,7 +286,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response* :
         ```json
-        {
+        [
                 {
                     "id": 1,
                     "title": "First Task",
@@ -324,7 +317,7 @@
                     "created_at": "2026-01-11T22:44:19.920548Z",
                     "updated_at": "2026-01-11T22:44:19.920562Z"
                 }
-        }
+        ]
 ### 5. *Update task*
 - **PUT**/api/tasks/{id} – Update task
     * *Headers* :
@@ -401,10 +394,16 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response*
         ```json
-        {
-            "id": 1,
-            "name": "Urgent"
-        }
+        [
+            {
+                "id": 1,
+                "name": "Very Urgent"
+            },
+            {
+                "id": 2,
+                "name": "Not Urgent"
+            }
+        ]
         ```
 ### 4. *Update label*
 - **PUT** /api/labels/{id} – Update label
