@@ -47,9 +47,6 @@ This project is built as a capstone project for the ALX Backend program.
 - Update a label
 - Delete a label
 - Attach / remove labels from tasks
-
-### Comments
-
 ---
 
 ## 🛠 Tech Stack
@@ -58,7 +55,8 @@ This project is built as a capstone project for the ALX Backend program.
 - **Authentication:** JWT (SimpleJWT)
 - **Database:** SQLite (dev) / PostgreSQL (production-ready)
 - **Tools:** Postman / Thunder Client for testing
-- **Deployment:** PythonAnywhere / Render
+- **Deployment:** Deployment is prepared for cloud platforms such as PythonAnywhere or Render.
+
 - **Version Control:** Git + GitHub
 
 ---
@@ -95,7 +93,7 @@ Follow these steps to run the project locally:
 ```bash
 # Clone the repository
 git clone https://github.com/MinaBG96/Alx_Task_Management_API.git
-cd task-management-api
+cd Task_Management_API/Alx_Task_Management_API/Task_Management_API
 
 # Create virtual environment
 python -m venv venv
@@ -114,6 +112,13 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 ---
+## 🔐 Authentication
+
+This API uses JWT authentication.  
+Include the access token in the request header:
+
+
+* **All protected endpoints require authentication.**
 
 ## 🔗 Main API Endpoints
 
