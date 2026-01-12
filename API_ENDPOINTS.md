@@ -373,10 +373,94 @@
 
 ## Labels
 
+### 1. *Create label*
 - **POST** /api/labels – Create label
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <_access-token_> of specific user**
+    * *Request Body*
+        ```bash
+        json{
+            "name": "Urgent"
+        }
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "name": "Urgent"
+        }
+        ```
+### 2. *List labels*
 - **GET** /api/labels – List labels
-- **PUT** /api/labels/{id} – Update label
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <_access-token_> of specific user**
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "name": "Urgent"
+        }
+        ```
+### 3. *Retrieve label*
 - **GET** /api/labels/{id} – Retrieve label
+     * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <_access-token_> of specific user**
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "name": "Urgent"
+        }
+        ```
+### 4. *Update label*
+- **PUT** /api/labels/{id} – Update label
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <_access-token_> of specific user**
+    * *Request Body* 
+        ```bash
+        json{
+            "name":"Very Urgent"
+        }
+    * *Response*
+        ```bash
+        json{
+            "id": 1,
+            "name": "Very Urgent"
+        }
+        ```
+### 5. *Delete label*
 - **DELETE** /api/labels/{id} – Delete label
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <_access-token_> of specific user**
+    * *Response*
+        ```bash
+        json{
+            "message": "Label deleted successfully"
+        }
+        ```
+### 6. *Attach label to task*
 - **POST** /api/tasks/{taskId}/labels/{labelId} – Attach label to task
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <_access-token_> of specific user**
+    * *Response*
+        ```bash
+        json{
+            "message": "Label attached to task successfully"
+        }
+        ```
+### 7. *Remove label from task*
 - **DELETE** /api/tasks/{taskId}/labels/{labelId} – Remove label from task
+    * *Headers* :
+        1. add key **Authorization of specific user**
+        2. add value: **Bearer <_access-token_> of specific user**
+    * *Response*
+        ```bash
+        json{
+            "message": "Label removed from task successfully"
+        }
+        ```
