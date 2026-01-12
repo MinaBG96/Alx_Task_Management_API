@@ -7,7 +7,7 @@
 - **POST** /api/auth/register – Register new user
   - _Request Body_
     ```json
-    json{
+    {
         "username": "mina1",
         "email": "mina@test.com",
         "password": "1234"
@@ -15,7 +15,7 @@
     ```
   - _response_
     ```json
-    json{
+    {
         "message": "User registered successfully"
     }
     ```
@@ -25,15 +25,14 @@
 - **POST** /api/auth/login – Obtain JWT access/refresh tokens
   - _Request Body_
     ```json
-    json{
+    {
         "username": "mina1",
-        "email": "mina@test.com",
         "password": "1234"
     }
     ```
   - _response_
     ```json
-    json{
+    {
         "refresh": "<access-token>",
         "access": "<access-token>"
     }
@@ -47,16 +46,9 @@
   - _Headers_ :
     1. add key **Authorization**
     2. add value: **Bearer access-token**
-  - _Request Body_
-    ```json
-    json{
-        "username": "mina",
-        "email": "mina@test.com"
-    }
-    ```
   - _Response_
     ```json
-    json{
+    {
         "id": 1,
         "username": "mina",
         "email": "mina@test.com"
@@ -71,14 +63,14 @@
     2. add value: **Bearer access-token**
   - _Request Body_
     ```json
-    json{
+    {
         "username": "mina_updated",
         "email": "mina_update@test.com"
     }
     ```
   - _Response_
     ```json
-    json{
+    {
         "username": "mina_updated",
         "email": "mina_update@test.com"
     }
@@ -92,14 +84,14 @@
     2. add value: **Bearer access-token**
   - _Request Body_
     ```json
-    json{
+    {
         "username": "mina3",
         "email": "mina2@test.com"
     }
     ```
   - _Response_
     ```json
-    json{
+    {
         "message": "User account deleted successfully"
     }
     ```
@@ -114,14 +106,14 @@
     2. add value: **Bearer <_access-token_> of specific user**
   - _Request Body_
     ```json
-    json{
+    {
         "name": "My First Project",
         "description": "This is my first project"
     }
     ```
   - _Response_
     ```json
-    json{
+    {
         "id": 1,
         "name": "My First Project",
         "description": "This is my first project",
@@ -138,7 +130,7 @@
     2. add value: **Bearer <_access-token_> of specific user**
   - _Response_
     ```json
-    json[
+    [
         {
             "id": 1,
             "name": "My First Project",
@@ -164,7 +156,7 @@
     2. add value: **Bearer <_access-token_> of specific user**
   - _Response_
     ```json
-    json{
+    {
         "id": 1,
         "name": "My First Project",
         "description": "This is my first project",
@@ -181,14 +173,14 @@
     2. add value: **Bearer <_access-token_> of specific user**
   - _Request Body_
     ```json
-    json{
+    {
         "name":"My First Project Updated",
         "description": "This is my first project Updated"
     }
     ```
   - _Response_
     ```json
-    json{
+    {
         "id": 1,
         "name": "My First Project Updated",
         "description": "This is my first project Updated",
@@ -205,7 +197,7 @@
     2. add value: **Bearer <_access-token_> of specific user**
   - _Response_
     ```json
-    json{
+    {
         "message": "Project deleted successfully"
     }
     ```
@@ -219,7 +211,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Request Body* :
         ```json
-        json{
+        {
             "title": "First Task",
             "description": "This is my first task",
             "priority": "high",
@@ -228,7 +220,7 @@
         ```
     * *Response* :
         ```json
-        json{
+        {
             "id": 1,
             "title": "First Task",
             "description": "This is my first task",
@@ -245,7 +237,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response* :
         ```json
-        json{
+        {
                 {
                     "id": 1,
                     "title": "First Task",
@@ -284,7 +276,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response* :
         ```json
-        json{
+        {
             "id": 1,
             "title": "First Task",
             "description": "This is my first task",
@@ -301,7 +293,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response* :
         ```json
-        json{
+        {
                 {
                     "id": 1,
                     "title": "First Task",
@@ -340,7 +332,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Request Body*
         ```json
-        json{
+        {
             "title":"Third Task",
             "description":"This is my Third task",
             "priority":"high",
@@ -349,7 +341,7 @@
         ```
         * *Response*
         ```json
-        json{
+        {
             "id": 3,
             "title": "Third Task",
             "description": "This is my Third task",
@@ -367,7 +359,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response*
         ```json
-        json{
+        {
             "message": "Task deleted successfully"
         }
 
@@ -380,12 +372,12 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Request Body*
         ```json
-        json{
+        {
             "name": "Urgent"
         }
     * *Response*
         ```json
-        json{
+        {
             "id": 1,
             "name": "Urgent"
         }
@@ -397,7 +389,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response*
         ```json
-        json{
+        {
             "id": 1,
             "name": "Urgent"
         }
@@ -409,7 +401,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response*
         ```json
-        json{
+        {
             "id": 1,
             "name": "Urgent"
         }
@@ -421,12 +413,12 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Request Body* 
         ```json
-        json{
+        {
             "name":"Very Urgent"
         }
     * *Response*
         ```json
-        json{
+        {
             "id": 1,
             "name": "Very Urgent"
         }
@@ -438,7 +430,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response*
         ```json
-        json{
+        {
             "message": "Label deleted successfully"
         }
         ```
@@ -449,7 +441,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response*
         ```json
-        json{
+        {
             "message": "Label attached to task successfully"
         }
         ```
@@ -460,7 +452,7 @@
         2. add value: **Bearer <_access-token_> of specific user**
     * *Response*
         ```json
-        json{
+        {
             "message": "Label removed from task successfully"
         }
         ```
