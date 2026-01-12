@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import LabelListCreateAPIView , LabelDetailAPIView , TaskLabelAPIVieww
+from .views import LabelListCreateAPIView , LabelDetailAPIView , TaskLabelAPIView
 
 urlpatterns = [
     path('', LabelListCreateAPIView.as_view()),
