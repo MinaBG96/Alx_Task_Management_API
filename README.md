@@ -121,7 +121,7 @@ Include the access token in the request header:
 * **All protected endpoints require authentication.**
 
 ## 🔗 Main API Endpoints
-**Detailed API documentation is available in API_DOCUMENTATION.md**
+**Detailed API documentation is available in [API_ENDPOINTS.md](./API_ENDPOINTS.md)**
 
 *Auth*
 - **POST** /api/auth/register – Register new user
